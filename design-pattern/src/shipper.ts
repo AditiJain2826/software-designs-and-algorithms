@@ -22,14 +22,12 @@ export class PacificParcelLetterShipper implements Shipper {
 
 export class AirEastPackageShipper implements Shipper {
     getCost(weight: number): number {
-        console.log("here in AirEastPackageShipper")
         return weight * 0.25;
     }
 }
 
 export class ChicagoSprintPackageShipper implements Shipper {
     getCost(weight: number): number {
-        console.log("here in ChicagoSprintPackageShipper");
         return weight * 0.20;
     }
 }
@@ -42,14 +40,12 @@ export class PacificParcelPackageShipper implements Shipper {
 
 export class AirEastOversizeShipper implements Shipper {
     getCost(weight: number): number {
-        console.log("here in AirEastOversizeShipper")
         return 10 + weight * 0.25;
     }
 }
 
 export class ChicagoSprintOversizeShipper implements Shipper {
     getCost(weight: number): number {
-        console.log("here in ChicagoSprintOversizeShipper")
         return weight * 0.20;
     }
 }

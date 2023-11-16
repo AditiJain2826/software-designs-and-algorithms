@@ -1,9 +1,9 @@
-import { Shipment } from "./shipment";
+import { IShipment, Shipment } from "./shipment";
 
 export class Client {
-    shipmentObj: Shipment;
+    shipmentObj: IShipment;
 
-    constructor(shipment: Shipment) {
+    constructor(shipment: IShipment) {
         this.shipmentObj = shipment;
     }
 

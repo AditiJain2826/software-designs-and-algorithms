@@ -1,7 +1,11 @@
 import { Shipper } from "./shipper";
 import { AirEastShipperFactory, ChicagoSprintShipperFactory, PacificParcelShipperFactory, ShipperFactory } from "./shipper-factory";
 
-export class Shipment {
+
+export interface IShipment{
+    ship():string;
+}
+export class Shipment implements IShipment {
 
     private shipmentID: number;
     private weight: number;
@@ -42,12 +46,11 @@ export class Shipment {
     }
     ship(): string {
         const cost = this.shipper.getCost(this.weight);
-        return `Shipment ID: ${this.shipmentID} \nSent From: ${this.fromAddress},\nGoing To: ${this.toAddress}, \nCost: ${cost}`
+        return `Shipment with the ID: ${this.shipmentID} will be picked up from ${this.fromAddress}, and shipped to ${this.toAddress}, \nCost: ${cost}`
     }
     
     static getShipperFactory(zipcode: string) {
         const firstDigit = parseInt(zipcode[0]);
-        console.log(firstDigit)
         if (firstDigit >= 1 && firstDigit <= 3) {
             return new AirEastShipperFactory();
         } else if (firstDigit >= 4 && firstDigit <= 6) {
