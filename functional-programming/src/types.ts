@@ -18,7 +18,7 @@ export enum Demand {
 
 export interface ClientUser extends User {
   // demands: Maybe<Array<Demand>>;
-  demands: Maybe<Demand[]>; // Update the type here
+  demands: Maybe<Demand[]>;
   reward: number;
 }
 
