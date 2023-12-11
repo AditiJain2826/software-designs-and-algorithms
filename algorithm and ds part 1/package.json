@@ -1,0 +1,16 @@
+{
+    "name": "design-patterns",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "rimraf ./dist && tsc",
+        "start": "npm run build && node dist/graph.js"
+    },
+    "devDependencies": {
+        "rimraf": "^3.0.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.6.2"
+    },
+    "dependencies": {
+        "@types/node": "^20.9.0"
+    }
+}
